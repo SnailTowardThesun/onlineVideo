@@ -1,0 +1,6 @@
+*__init__.py
+*__pycache__
+
+server/build
+server/output
+backend/onlineBackend/db.sqlite3
