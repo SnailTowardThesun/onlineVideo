@@ -22,10 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <iostream>
-#include "ms_log.hpp"
-#include "ms_common.hpp"
+#ifndef __MS_COMMON_HEADER__
+#define __MS_COMMON_HEADER__
 
-int main(int argc, char *argv[]) {
-    INFO("verson %s", ms_common::version().c_str());
-}
+#include <sstream>
+
+namespace ms_common {
+
+    const int VERSION_MAJOR = 0;
+    const int VERSION_MINOR = 0;
+    const int VERSION_BUILD = 0;
+    const int VERSION_REVISION = 1;
+
+    std::string version() {
+        std::stringstream ss;
+        ss << VERSION_MAJOR << "." << VERSION_MINOR << "." << VERSION_BUILD << "."
+           << VERSION_REVISION;
+        return ss.str();
+    }
+} // namespace ms_common
+
+#endif

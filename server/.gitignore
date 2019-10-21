@@ -1,0 +1,5 @@
+build/*
+third-party/*
+.idea
+cmake*
+output
