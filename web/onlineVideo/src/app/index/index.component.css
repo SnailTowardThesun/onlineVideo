@@ -1,0 +1,32 @@
+.index_wrapper {
+    width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 80px 120px 120px 120px 120px 50px;
+    grid-gap: 40px;
+}
+
+.navigate_title {
+    grid-column: 6/1;
+    grid-row: 1/1;
+    height: 80px;
+}
+
+.mainChannel {
+    text-align: center;
+    grid-column: 4 / 1;
+    grid-row: 2 / 5;
+    background-color: black;
+}
+
+.subChannel {
+    text-align: center;
+    background-color: black;
+}
+
+.footer {
+    text-align: center;
+    grid-column: 6/1;
+    grid-row: 6/6;
+}

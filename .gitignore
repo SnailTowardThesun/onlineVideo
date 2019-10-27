@@ -3,3 +3,4 @@
 
 backend/onlineBackend/db.sqlite3
 .vscode
+backend/onlineBackend/.idea/*
