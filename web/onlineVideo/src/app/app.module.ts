@@ -11,14 +11,16 @@ import { IndexComponent } from './index/index.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './material-module';
-import { NavigateComponent } from './navigate/navigate.component';
+import { NavigateComponent, NavUserDialog } from './navigate/navigate.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChannelComponent,
     IndexComponent,
-    NavigateComponent
+    NavigateComponent,
+    NavUserDialog,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +29,14 @@ import { NavigateComponent } from './navigate/navigate.component';
     FormsModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
   ],
+
+  entryComponents: [
+    NavUserDialog
+  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

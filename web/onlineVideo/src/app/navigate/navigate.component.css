@@ -2,3 +2,13 @@
     width: 1280px;
     margin: auto;
 }
+
+.nav_icon {
+    padding: 0px 14px;
+}
+
+.index_href {
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+}
