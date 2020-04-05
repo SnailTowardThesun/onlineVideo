@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { UserService, common_response } from '../../interface/user.service';
 
 export interface DialogData {
   animal: string;
@@ -38,9 +39,25 @@ export class NavigateComponent implements OnInit {
 })
 
 export class NavUserDialog {
-  constructor(public dialogRef: MatDialogRef<NavUserDialog>) { }
+  constructor(public dialogRef: MatDialogRef<NavUserDialog>, private userService: UserService) { }
+  username = ''
+  passwd = ''
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  onSignInClick(): void {
+    console.log('on sign in log: ' + this.username + ', ' + this.passwd);
+
+    this.userService.registerUser('123', '123').subscribe((data: common_response) => {
+      console.log('response: ' + data['errorCode'] + ', ' + data['msg']);
+    });
+
+  }
+
+  onSignUpClick(): void {
+    console.log('on sign up log' + this.username + ', ' + this.passwd);
+
+    this.userService.loginUser('123', '123').subscribe((data: common_response) => {
+      console.log('response: ' + data['errorCode'] + ', ' + data['msg']);
+    });
+    
   }
 }
