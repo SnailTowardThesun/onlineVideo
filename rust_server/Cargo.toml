@@ -1,2 +1,2 @@
 [workspace]
-members=["backend", "media_server"]
+members=["media_server"]
